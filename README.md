@@ -17,7 +17,8 @@
   * .....
 
 ### Third Party Content
-
+  *Credit
+    * [Calculator UI Inspiration](https://dribbble.com/shots/15741461-Calculator-App-UI#)
   * Images used as icons
     * ........
 
