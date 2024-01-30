@@ -21,7 +21,7 @@ body {
 }
 
 .row {
-    border: 1px red solid;
+    /* border: 1px red solid; */
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -33,7 +33,7 @@ button {
     aspect-ratio: 1 / 1;
     border-radius: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 23px;
+    font-size: 20px;
 }
 
 #themeToggleContainer {
@@ -58,12 +58,12 @@ button {
 
 #operation{
     padding: 10px 10px;
-    border: 1px red solid;
+    /* border: 1px red solid; */
 }
 
 #solution{
     padding: 20px 10px;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     font-size: x-large;
 }
 
@@ -77,6 +77,6 @@ button {
     width: 100%;
     border: 2px green dashed;
     border-radius: 0 0 25px 25px;
-    /* background-color: #323844; */
+    background-color: #323844;
 }
 
