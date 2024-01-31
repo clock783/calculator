@@ -56,12 +56,12 @@ button {
     justify-content: end;
 }
 
-#operation{
+#topLine{
     padding: 10px 10px;
     /* border: 1px red solid; */
 }
 
-#solution{
+#bottomLine{
     padding: 20px 10px;
     /* border: 1px red solid; */
     font-size: x-large;
