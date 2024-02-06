@@ -32,28 +32,17 @@ document.getElementById('all-clear').addEventListener('click', function(){
 
 
 //set number buttons' functions
-const one = document.getElementById('one');
-const two = document.getElementById('two');
-const three = document.getElementById('three');
-const four = document.getElementById('four');
-const five = document.getElementById('five');
-const six = document.getElementById('six');
-const seven = document.getElementById('seven');
-const eight = document.getElementById('eight');
-const nine = document.getElementById('nine');
-const zero = document.getElementById('zero');
-
 const numbers = [
-    {element:one, number: 1},
-    {element:two, number: 2},
-    {element:three, number: 3},
-    {element:four, number: 4},
-    {element:five, number: 5},
-    {element:six, number: 6},
-    {element:seven, number: 7},
-    {element:eight, number: 8},
-    {element:nine, number: 9},
-    {element:zero, number: 0}
+    {element:document.getElementById('one'), number: 1},
+    {element:document.getElementById('two'), number: 2},
+    {element:document.getElementById('three'), number: 3},
+    {element:document.getElementById('four'), number: 4},
+    {element:document.getElementById('five'), number: 5},
+    {element:document.getElementById('six'), number: 6},
+    {element:document.getElementById('seven'), number: 7},
+    {element:document.getElementById('eight'), number: 8},
+    {element:document.getElementById('nine'), number: 9},
+    {element:document.getElementById('zero'), number: 0}
 ];
 
 console.log(numbers[0]['element']);
