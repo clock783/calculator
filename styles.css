@@ -58,13 +58,16 @@ button {
 
 #topLine{
     padding: 10px 10px;
-    /* border: 1px red solid; */
+    border: 1px red solid;
+    min-height: 18.5px;
 }
 
 #bottomLine{
     padding: 20px 10px;
-    /* border: 1px red solid; */
-    font-size: x-large;
+    border: 1px red solid;
+    font-size:x-large;
+    font-weight: bold;
+    min-height: 27.5px;
 }
 
 #inputContainer {

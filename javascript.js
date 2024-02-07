@@ -22,6 +22,11 @@ const subtract = (a,b) => a - b;
 const multiply = (a,b) => a * b;
 const divide = (a,b) => a / b;
 
+function updateDisplay(){
+    document.getElementById('topLine').textContent = topLine;
+    document.getElementById('bottomLine').textContent = bottomLine;
+}
+
 //set all clear (AC) button function
 document.getElementById('all-clear').addEventListener('click', function(){
     topLine = '';
@@ -29,7 +34,6 @@ document.getElementById('all-clear').addEventListener('click', function(){
     updateDisplay();
     console.log('clicked!');
 });
-
 
 //set number buttons' functions
 const numbers = [
@@ -45,20 +49,26 @@ const numbers = [
     {element:document.getElementById('zero'), number: 0}
 ];
 
-console.log(numbers[0]['element']);
 //add events to numbers
 for (let num of numbers){
-    // console.log(numbers[num], typeof num);
-    // console.log(num['element']);
     num['element'].addEventListener('click', function(){
         bottomLine += num['number'];
         updateDisplay();
     });
 };
 
-function updateDisplay(){
-    document.getElementById('topLine').textContent = topLine;
-    document.getElementById('bottomLine').textContent = bottomLine;
+//set operations' buttons
+const operationButtons = [
+    {element: document.getElementById('plus'), op:'+'},
+    {element: document.getElementById('minus'), op:'-'},
+    {element: document.getElementById('multiply'), op:'*'},
+    {element: document.getElementById('divide'), op:'/'}
+];
+//add event to operations
+for (let op of operationButtons){
+    op['element'].addEventListener('click', function(){
+        topLine += bottomLine + ' ' + op['op'] + ' ';
+        bottomLine ='';
+        updateDisplay();
+    });
 }
-
-// console.log('tests');
