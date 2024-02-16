@@ -6,6 +6,11 @@ let operator;
 let topLine = '';
 let bottomLine = '';
 
+const add = (a,b) => a + b;
+const subtract = (a,b) => a - b;
+const multiply = (a,b) => a * b;
+const divide = (a,b) => a / b;
+
 //create function to solve arithmetic with two operands and one opertor
 function solve(a, operator, b){
     let operation = {
@@ -17,11 +22,6 @@ function solve(a, operator, b){
     return operation[operator];
 }
 
-const add = (a,b) => a + b;
-const subtract = (a,b) => a - b;
-const multiply = (a,b) => a * b;
-const divide = (a,b) => a / b;
-
 function updateDisplay(){
     document.getElementById('topLine').textContent = topLine;
     document.getElementById('bottomLine').textContent = bottomLine;
@@ -32,7 +32,7 @@ document.getElementById('all-clear').addEventListener('click', function(){
     topLine = '';
     bottomLine = '';
     updateDisplay();
-    console.log('clicked!');
+    // console.log('clicked!');
 });
 
 //set number buttons' functions
@@ -72,3 +72,13 @@ for (let op of operationButtons){
         updateDisplay();
     });
 }
+
+//add event to equal sign button
+const equalButton = document.getElementById('equals');
+equalButton.addEventListener('click',function(){
+    topLine += bottomLine;
+    let opsArray = topLine.split(' ');
+    console.log(opsArray);
+    bottomLine = solve(opsArray[0], opsArray[1], opsArray[2]);
+    updateDisplay();
+});
