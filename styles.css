@@ -4,12 +4,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: #ff8361; */
+    background-color: #ff8361;
 }
 #mainContainer {
-    /* background-color: #21242d; */
+    background-color: #21242d;
     display: flex;
-    border: 2px solid magenta;
+    /* border: 2px solid magenta; */
     flex-direction: column;
     align-items: center;
     height: 690px;
@@ -34,6 +34,32 @@ button {
     border-radius: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
+    background: #2a2e39;
+	color: white;
+	border: none;
+	padding: 0;
+    transition: background-color 0.3s;
+	/* font: inherit; */
+	cursor: pointer;
+	/* outline: inherit; */
+}
+
+button:hover{
+    background-color: #3E4554;
+}
+
+#topRowOfButtons > *{
+    color: #e1db87;
+}
+
+#divide,#multiply,#minus,#plus,#equals,#backspace{
+    color: #fb8363;
+    font-size: 25px;
+    /* background-color: aqua; */
+}
+
+#divide{
+    font-size: 35px;
 }
 
 #themeToggleContainer {
@@ -42,6 +68,7 @@ button {
     height: 5%;
     width: 50%;
     border: 2px blue solid;
+    color: white;
 }
 
 #display {
@@ -49,7 +76,7 @@ button {
     /* top: 10; */
     height: 25%;
     width: 100%;
-    border: 2px purple solid;
+    /* border: 2px purple solid; */
     display: flex;
     flex-direction: column;
     align-items:end;
@@ -58,16 +85,18 @@ button {
 
 #topLine{
     padding: 10px 10px;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     min-height: 18.5px;
+    color: #636a7b;
 }
 
 #bottomLine{
     padding: 20px 10px;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     font-size:x-large;
     font-weight: bold;
     min-height: 27.5px;
+    color: white;
 }
 
 #inputContainer {
@@ -78,8 +107,7 @@ button {
     flex-direction: column;
     height: 70%;
     width: 100%;
-    border: 2px green dashed;
-    border-radius: 0 0 25px 25px;
+    /* border: 2px green dashed; */
+    border-radius: 25px;
     background-color: #323844;
 }
-

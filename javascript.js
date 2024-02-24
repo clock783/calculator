@@ -61,7 +61,7 @@ for (let num of numbers){
 const operationButtons = [
     {element: document.getElementById('plus'), op:'+'},
     {element: document.getElementById('minus'), op:'-'},
-    {element: document.getElementById('multiply'), op:'*'},
+    {element: document.getElementById('multiply'), op:'x'},
     {element: document.getElementById('divide'), op:'/'}
 ];
 //add event to operations
@@ -79,6 +79,10 @@ equalButton.addEventListener('click',function(){
     topLine += bottomLine;
     let opsArray = topLine.split(' ');
     console.log(opsArray);
-    bottomLine = solve(opsArray[0], opsArray[1], opsArray[2]);
+    if(opsArray[1]==="x"){
+        bottomLine = solve(opsArray[0], "*", opsArray[2]);
+    } else{
+        bottomLine = solve(opsArray[0], opsArray[1], opsArray[2]);
+    }
     updateDisplay();
 });
