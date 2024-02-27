@@ -54,7 +54,7 @@ const numbers = [
 //add events to numbers
 for (let num of numbers){
     num['element'].addEventListener('click', function(){
-        bottomLine += num['number'];
+        bottomLine += num['number'].toString();
         updateDisplay();
     });
 };
@@ -69,18 +69,8 @@ const operationButtons = [
 //add event to operations
 for (let op of operationButtons){
     op['element'].addEventListener('click', function(){
-        // topLine += `${bottomLine}<span style="color: red"> ${op['op']} </span>`;
-        // let newSpan = document.createElement('span');
-        // newSpan.textContent = ` ${op['op']} `;
-        // newSpan.setAttribute('style', 'color:red');
-        // topLine += bottomLine;
-        // topLine.appendChild(newSpan);
         topLine += `${bottomLine} ${op['op']} `;
         bottomLine ='';
-        // document.getElementById('topLine').textContent = topLine;
-        // document.getElementById('topLine').appendChild(newSpan);
-        // document.getElementById('bottomLine').textContent = '';
-        // console.log(topLine);
         updateDisplay();
     });
 }
@@ -91,11 +81,18 @@ equalButton.addEventListener('click',function(){
     topLine += bottomLine;
     let opsArray = topLine.split(' ');
     console.log(opsArray);
+    console.log('solving...')
     if(opsArray[1]==="x"){
         bottomLine = solve(opsArray[0], "*", opsArray[2]);
     } else{
-        console.log('solving...')
         bottomLine = solve(opsArray[0], opsArray[1], opsArray[2]);
     }
+    updateDisplay();
+});
+
+//add event to % button
+const percentButton = document.getElementById('percent');
+percentButton.addEventListener('click', function(){
+    bottomLine = bottomLine / 100;
     updateDisplay();
 });
