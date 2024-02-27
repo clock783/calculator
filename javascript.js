@@ -6,7 +6,7 @@ let operator;
 let topLine = '';
 let bottomLine = '';
 
-const add = (a,b) => a + b;
+const add = (a,b) => +a + +b;
 const subtract = (a,b) => a - b;
 const multiply = (a,b) => a * b;
 const divide = (a,b) => a / b;
@@ -25,6 +25,8 @@ function solve(a, operator, b){
 function updateDisplay(){
     document.getElementById('topLine').textContent = topLine;
     document.getElementById('bottomLine').textContent = bottomLine;
+    console.log(`topLine = ${topLine}`);
+    console.log(`bottomLine = ${bottomLine}\n`);
 }
 
 //set all clear (AC) button function
@@ -67,8 +69,18 @@ const operationButtons = [
 //add event to operations
 for (let op of operationButtons){
     op['element'].addEventListener('click', function(){
-        topLine += bottomLine + ' ' + op['op'] + ' ';
+        // topLine += `${bottomLine}<span style="color: red"> ${op['op']} </span>`;
+        // let newSpan = document.createElement('span');
+        // newSpan.textContent = ` ${op['op']} `;
+        // newSpan.setAttribute('style', 'color:red');
+        // topLine += bottomLine;
+        // topLine.appendChild(newSpan);
+        topLine += `${bottomLine} ${op['op']} `;
         bottomLine ='';
+        // document.getElementById('topLine').textContent = topLine;
+        // document.getElementById('topLine').appendChild(newSpan);
+        // document.getElementById('bottomLine').textContent = '';
+        // console.log(topLine);
         updateDisplay();
     });
 }
@@ -82,6 +94,7 @@ equalButton.addEventListener('click',function(){
     if(opsArray[1]==="x"){
         bottomLine = solve(opsArray[0], "*", opsArray[2]);
     } else{
+        console.log('solving...')
         bottomLine = solve(opsArray[0], opsArray[1], opsArray[2]);
     }
     updateDisplay();
